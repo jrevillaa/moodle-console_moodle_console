@@ -106,10 +106,15 @@ class NewModule extends Command
   }
 
   function create_index($target,$name,$type,$route){
+    if($type == 'blocks'){
+      $newtype = 'block';
+    }else{
+      $newtype = $type;
+    }
     $data_dummy = '
 <?php
 
-require_once(' . $route . '"/config.php");
+require_once("' . $route . '/config.php");
 
 global $DB, $CFG, $PAGE, $OUTPUT;
 require_once($CFG->libdir."/adminlib.php");
@@ -122,7 +127,7 @@ $PAGE->set_context($context);
 $PAGE->set_heading($SITE->fullname);
 $main_url = new moodle_url("/' . $type . '/' . $name . '/index.php");
 $PAGE->set_url($main_url);
-$title = get_string("titlesite","' . $type . '_' . $name . '");
+$title = get_string("titlesite","' . $newtype . '_' . $name . '");
 $PAGE->set_title($title);
 $PAGE->set_heading($title);
 print $OUTPUT->header();
@@ -142,6 +147,11 @@ print $OUTPUT->footer();';
   }
 
   function create_version_settings($target,$name,$type){
+    if($type == 'blocks'){
+      $newtype = 'block';
+    }else{
+      $newtype = $type;
+    }
     $data_version= '<?php
 
 defined("MOODLE_INTERNAL") || die;
@@ -149,7 +159,7 @@ defined("MOODLE_INTERNAL") || die;
 $plugin->version   = 2015041700;
 $plugin->release   = "1.0";
 $plugin->requires  = 2013082100; 
-$plugin->component = "' . $type . '_' . $name . '";';
+$plugin->component = "' . $newtype . '_' . $name . '";';
 
     $data_settings= '<?php 
 
@@ -159,11 +169,11 @@ defined("MOODLE_INTERNAL") || die;
 
 if ($hassiteconfig) {
   //Add link in modules
-  $ADMIN->add("modules", new admin_category("categorydummy", get_string("exampletitle","' . $type . '_' . $name . '")));
+  $ADMIN->add("modules", new admin_category("categorydummy", get_string("exampletitle","' . $newtype . '_' . $name . '")));
   
   //generate link to Admin
   $ADMIN->add("categorydummy", new admin_externalpage("generateDummy", 
-                get_string("menutitleexample", "' . $type . '_' . $name . '"), 
+                get_string("menutitleexample", "' . $newtype . '_' . $name . '"), 
                 new moodle_url("' . $type . '/' . $name . '/index.php")));
 
 }';
@@ -182,9 +192,14 @@ if ($hassiteconfig) {
   }
 
   function create_lang($target,$name,$type){
+    if($type == 'blocks'){
+      $newtype = 'block';
+    }else{
+      $newtype = $type;
+    }
     $data_dummy = '<?php
     defined("MOODLE_INTERNAL") || die();
-   $string["modulename"] = "' . $name . '";
+   $string["pluginmane"] = "' . $name . '";
    $string["exampletitle"] = "Link Example";
    $string["menutitleexample"] = "Page Example";
    $string["modulenameplural"] = "' . $name . 's";';
@@ -192,7 +207,7 @@ if ($hassiteconfig) {
     mkdir($target .'/lang', 0755, true);
     mkdir($target .'/lang/en', 0755, true);
 
-    if (file_put_contents($target.'/lang/en/' . $type . '_' . $name . '.php', $data_dummy, FILE_APPEND | LOCK_EX)) {
+    if (file_put_contents($target.'/lang/en/' . $newtype . '_' . $name . '.php', $data_dummy, FILE_APPEND | LOCK_EX)) {
       return true;
     }
     else {
@@ -202,7 +217,11 @@ if ($hassiteconfig) {
   }
 
   function create_db($target,$name,$type){
-
+    if($type == 'blocks'){
+      $newtype = 'block';
+    }else{
+      $newtype = $type;
+    }
     $data_dummy = '<?xml version="1.0" encoding="UTF-8" ?>
       <XMLDB PATH="' . $type . '/' . $name . '/db" VERSION="2015041700" COMMENT="XMLDB file for Moodle ' . $type . '/' . $name . '"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
