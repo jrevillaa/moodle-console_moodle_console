@@ -8,6 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
+    'Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
+    'Symfony\\Component\\Asset\\' => array($vendorDir . '/symfony/asset'),
     'Atypax\\' => array($baseDir . '/src'),
 );

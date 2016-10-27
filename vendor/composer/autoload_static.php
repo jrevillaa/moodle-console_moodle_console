@@ -16,7 +16,9 @@ class ComposerStaticInit3c8fcd70dfb1aa40fd6c66945ad8498b
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
+            'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\Console\\' => 26,
+            'Symfony\\Component\\Asset\\' => 24,
         ),
         'A' => 
         array (
@@ -33,9 +35,17 @@ class ComposerStaticInit3c8fcd70dfb1aa40fd6c66945ad8498b
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
+        'Symfony\\Component\\Filesystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/filesystem',
+        ),
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Symfony\\Component\\Asset\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/asset',
         ),
         'Atypax\\' => 
         array (

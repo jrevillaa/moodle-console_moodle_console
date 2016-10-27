@@ -4,9 +4,64 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "272266a79c0a52af09c482e1472ce6a6",
-    "content-hash": "187ec896a969490e9089b701717a4a8e",
+    "hash": "fcd3ff6a06e37523359dc6b6d670733a",
+    "content-hash": "805a9f76f5b546316ec4f8fff4b9db73",
     "packages": [
+        {
+            "name": "symfony/asset",
+            "version": "v3.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/asset.git",
+                "reference": "967518f63a096593064c26ae1201a76a58caf216"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/asset/zipball/967518f63a096593064c26ae1201a76a58caf216",
+                "reference": "967518f63a096593064c26ae1201a76a58caf216",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "symfony/http-foundation": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/http-foundation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Asset\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Asset Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-09-24 15:56:48"
+        },
         {
             "name": "symfony/console",
             "version": "v3.1.0",
@@ -66,6 +121,55 @@
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
             "time": "2016-05-30 06:58:39"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "v3.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "682fd8fdb3135fdf05fc496a01579ccf6c85c0e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/682fd8fdb3135fdf05fc496a01579ccf6c85c0e5",
+                "reference": "682fd8fdb3135fdf05fc496a01579ccf6c85c0e5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-09-14 00:18:46"
         },
         {
             "name": "symfony/polyfill-mbstring",
